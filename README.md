@@ -1,16 +1,11 @@
 # Presentation
-My Second java project(helped by my father (FoxPaps on github)). It's just a basic version of the game of life as described here https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+My Second java project(helped by my father (foxpaps on github)). It's just a basic version of the game of life as described here https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 #Rules
 The game is composed of a grid of cells.
 -If a dead cell(white cells) has exactly 3 neighboors on the next generation the cell will born, it will be alive!
 -If an alive cell(black cells) has 3 or 4 neighboors, it will survive to the next generation, otherwise it will die!
-With thoses simple rules you can create funny little objects/mechanisme here's by example a planer(it will move on the grid until it reaches the end of the grid):
-XXXXX
-XOOOX
-XOXXX
-XXOXX
-XXXXX
+With thoses simple rules you can create funny little objects/mechanisme by example planners or logic gates (altough I think my grid is to small for this ^^)...
 
 #How To Launch
 To use it just copy GameOfLife_runable of your computer use cd to the path and then 'java -jar GameOfLife_runable.java'

@@ -52,8 +52,8 @@ public static JPanel background() {
 	buttons.setLayout(flawlayout);
 	background.setLayout(borderlayout);
  	previousgen previousgen = new previousgen();
-    gridlayout.setHgap(1);
-    gridlayout.setVgap(1);
+    gridlayout.setHgap(0);
+    gridlayout.setVgap(0);
     grid.setLayout(gridlayout);
     for (int x=0;x<raws;x++) {
     	for(int y=0;y<columns;y++) {
@@ -92,17 +92,16 @@ public static JPanel background() {
 				RulesLayout.setVgap(10);
 				RulesPanel.setLayout(RulesLayout);
 				RulesPanel.add(bornlabel);
-				for (int i=0;i<8;i++) {
+				for (int i=0;i<9;i++) {
 					RulesPanel.add(BornConds[i]);
 				};
 				RulesPanel.add(survivelabel);
-				for (int i=0;i<8;i++) {
+				for (int i=0;i<9;i++) {
 					RulesPanel.add(SurviveConds[i]);
 				};
 				RulesWindow.add(RulesPanel);
 				RulesWindow.setSize(450,200);
 				RulesWindow.setVisible(true);
-				System.out.println("rules");
 			}
 		}
 	});
@@ -166,16 +165,12 @@ public static JPanel background() {
 				JOptionPane WindowSetting = new JOptionPane();
 				String GenerationDelay = (String) WindowSetting.showInputDialog(null,"Select a delay between each generation","Delay",JOptionPane.QUESTION_MESSAGE, null, delaylist,delaylist[0]);
 				if ("125".equals(GenerationDelay)) {
-					System.out.println("125");
 					t.setDelay(125);
 				} else if ("250".equals(GenerationDelay)) {
-					System.out.println("250");
 					t.setDelay(250);
 				}else if ("500".equals(GenerationDelay)) {
-					System.out.println("500");
 					t.setDelay(500);
 				}else if ("1000".equals(GenerationDelay)) {
-					System.out.println("1000");
 					t.setDelay(1000);
 				};
 			};
@@ -246,7 +241,7 @@ public static void nextgeneration() {
 							}}catch(Exception e1) {};
 						}
 					}
-					for (int i=0;i<8;i++) {
+					for (int i=0;i<9;i++) {
 						if(BornConds[i].isSelected()&i==voisins&!previousgen.grid[y][x].isLife()) {
 							nextgen[y][x]=true;
 						} else if (SurviveConds[i].isSelected()&i==voisins&previousgen.grid[y][x].isLife()) {

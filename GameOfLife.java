@@ -1,4 +1,4 @@
-package GameOfLife;
+ppackage GameOfLife;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +20,7 @@ public class GameOfLife {
                 }
                 JFrame window = new JFrame("GameOfLife");
                 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        		ImageIcon img = new ImageIcon("E:\\Dev\\MonWorkspace\\CPS tester\\src\\icon_GameOfLife.png");
+        		ImageIcon img = new ImageIcon("C:\\Users\\matth\\Pictures\\GameOfLife.png");
         		window.setIconImage(img.getImage());
         		window.add(background());
         		window.setSize(600, 660);
@@ -84,6 +84,8 @@ public static JPanel background() {
 				JDialog RulesWindow = new JDialog();
 				RulesWindow.setTitle("Rules");
 				RulesWindow.setDefaultCloseOperation(RulesWindow.DISPOSE_ON_CLOSE);
+				ImageIcon img = new ImageIcon("C:\\Users\\matth\\Pictures\\settings_logo.png");
+        		RulesWindow.setIconImage(img.getImage());
 				JPanel RulesPanel = new JPanel();
 				GridLayout RulesLayout = new GridLayout(2,10);
 				JLabel bornlabel = new JLabel("cell borns");
@@ -100,7 +102,7 @@ public static JPanel background() {
 					RulesPanel.add(SurviveConds[i]);
 				};
 				RulesWindow.add(RulesPanel);
-				RulesWindow.setSize(450,200);
+				RulesWindow.setSize(600,200);
 				RulesWindow.setVisible(true);
 			}
 		}

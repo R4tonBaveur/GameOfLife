@@ -23,7 +23,7 @@ public class GameOfLife {
         		ImageIcon img = new ImageIcon("C:\\Users\\matth\\Pictures\\GameOfLife.png");
         		window.setIconImage(img.getImage());
         		window.add(background());
-        		window.setSize(600, 660);
+        		window.setSize(800, 800);
         		window.setVisible(true);
         		window.setResizable(true);
             };
@@ -40,26 +40,14 @@ public static boolean getRandomBoolean() {
  }
 
 public static JPanel background() {
-	Timer t = new Timer(0, null);//creates the timer for repeatedly spawning the next generations
-	t.setRepeats(true);
-	t.setDelay(125);//setDelay(Ms) sets repeat delay of start button
+	//Creating the different components
 	JPanel background = new JPanel();
 	JPanel buttons = new JPanel();
 	JPanel grid = new JPanel();
 	FlowLayout flawlayout = new FlowLayout();
 	BorderLayout borderlayout = new BorderLayout();
 	GridLayout gridlayout = new GridLayout(raws,columns);
-	buttons.setLayout(flawlayout);
-	background.setLayout(borderlayout);
- 	previousgen previousgen = new previousgen();
-    gridlayout.setHgap(0);
-    gridlayout.setVgap(0);
-    grid.setLayout(gridlayout);
-    for (int x=0;x<raws;x++) {
-    	for(int y=0;y<columns;y++) {
-    		grid.add(previousgen.grid[x][y]);
-    	}
-    }
+	GridLayout RulesLayout = new GridLayout(2,10);
 	JButton start = new JButton("Start");
 	JButton randomgen = new JButton("Random Generation");
 	JButton clear = new JButton("Clear");
@@ -67,7 +55,36 @@ public static JPanel background() {
 	JButton stop = new JButton("Stop");
 	JButton settings = new JButton("Delay");
 	JButton rules = new JButton("rules");
+	JDialog RulesWindow = new JDialog();
+	JPanel RulesPanel = new JPanel();
+	JLabel bornlabel = new JLabel("cell borns");
+	JLabel survivelabel = new JLabel("cell survives");
+	previousgen previousgen = new previousgen();
+	ImageIcon settingsIcon = new ImageIcon("C:\\Users\\matth\\Pictures\\settings_logo.png");
+	Timer t = new Timer(0, null);//creates the timer for repeatedly spawning the next generations
+	t.setRepeats(true);
+	t.setDelay(125);//setDelay(Ms) sets repeat delay of start button
 	String[] delaylist = {"Delay","125","250","500","1000"};
+	//Adding the layouts to the panels and setting them
+	buttons.setLayout(flawlayout);
+	background.setLayout(borderlayout);
+    grid.setLayout(gridlayout);
+    gridlayout.setHgap(0);
+    gridlayout.setVgap(0);
+    RulesPanel.setLayout(RulesLayout);
+	RulesLayout.setHgap(5);
+	RulesLayout.setVgap(10);
+	//setting the RulesWindow frame
+	RulesWindow.setIconImage(settingsIcon.getImage());
+	RulesWindow.setTitle("Rules");
+	RulesWindow.setDefaultCloseOperation(RulesWindow.HIDE_ON_CLOSE);
+	RulesWindow.setSize(650,200);
+	//adding the different components to all their frame
+    for (int x=0;x<raws;x++) {
+    	for(int y=0;y<columns;y++) {
+    		grid.add(previousgen.grid[x][y]);
+    	}
+    }
 	background.add(buttons, BorderLayout.NORTH);
 	background.add(grid, BorderLayout.CENTER);
 	buttons.add(start);
@@ -77,32 +94,19 @@ public static JPanel background() {
 	buttons.add(stop);
 	buttons.add(rules);
 	buttons.add(settings);
+	RulesWindow.add(RulesPanel);
+	RulesPanel.add(bornlabel);
+	for (int i=0;i<9;i++) {
+		RulesPanel.add(BornConds[i]);
+	};
+	RulesPanel.add(survivelabel);
+	for (int i=0;i<9;i++) {
+		RulesPanel.add(SurviveConds[i]);
+	};
 	
 	rules.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == rules) {
-				JDialog RulesWindow = new JDialog();
-				RulesWindow.setTitle("Rules");
-				RulesWindow.setDefaultCloseOperation(RulesWindow.DISPOSE_ON_CLOSE);
-				ImageIcon img = new ImageIcon("C:\\Users\\matth\\Pictures\\settings_logo.png");
-        		RulesWindow.setIconImage(img.getImage());
-				JPanel RulesPanel = new JPanel();
-				GridLayout RulesLayout = new GridLayout(2,10);
-				JLabel bornlabel = new JLabel("cell borns");
-				JLabel survivelabel = new JLabel("cell survives");
-				RulesLayout.setHgap(5);
-				RulesLayout.setVgap(10);
-				RulesPanel.setLayout(RulesLayout);
-				RulesPanel.add(bornlabel);
-				for (int i=0;i<9;i++) {
-					RulesPanel.add(BornConds[i]);
-				};
-				RulesPanel.add(survivelabel);
-				for (int i=0;i<9;i++) {
-					RulesPanel.add(SurviveConds[i]);
-				};
-				RulesWindow.add(RulesPanel);
-				RulesWindow.setSize(600,200);
 				RulesWindow.setVisible(true);
 			}
 		}

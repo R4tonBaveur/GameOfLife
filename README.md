@@ -7,11 +7,8 @@ The game is composed of a grid of cells.
 -If an alive cell(black cells) has 3 or 4 neighboors, it will survive to the next generation, otherwise it will die!
 With thoses simple rules you can create funny little objects/mechanisme by example planners or logic gates (altough I think my grid is to small for this ^^)...
 
-# How To Launch
-To use it just copy GameOfLife_runable on your computer use 'cd' to the path and then 'java -jar GameOfLife_runable.java'
-
 # How To Use The Game
-You can either manually place cells or remove then by clicking with the mouse either use "RandomG eneration" to randomly fill the grid(with a probability of 0.5 for each cell to born). Then you can either use "Start" to make the game automaticly pass from the previous gen to the nextone, then use "Stop" to stop it, either use "Next Generation" which will create the next generation of cells. Finally you can use "clear" to kill all living cells on the grid.
+You can either manually place cells or remove then by clicking with the mouse either use "Random Generation" to randomly fill the grid(with a probability of 0.5 for each cell to born). Then you can either use "Start" to make the game automaticly pass from the previous gen to the nextone, then use "Stop" to stop it, either use "Next Generation" which will create the next generation of cells. Finally you can use "clear" to kill all living cells on the grid.
 I let the game with the default rules but you can modify them as well as the delay between two generations.
 
 # Thanks for using!

@@ -1,5 +1,5 @@
 # Presentation
-My Second java project(helped by my father (foxpaps on github)). It's just a basic version of the game of life as described here https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+My Second java project(very poorly coded helped by my father). It's just a basic version of the game of life as described here https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 # Rules
 The game is composed of a grid of cells.

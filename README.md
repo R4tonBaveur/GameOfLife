@@ -12,3 +12,5 @@ You can either manually place cells or remove then by clicking with the mouse ei
 I let the game with the default rules but you can modify them as well as the delay between two generations.
 
 # Thanks for using!
+
+note: this was one of my first java project ever, so yes its poorly implemented
